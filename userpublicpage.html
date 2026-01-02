@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Public Page</title>
+</head>
+<body>
+
+  <h2 id="username">Loading...</h2>
+  <div id="publicGallery"></div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+      console.log("Page loaded");
+
+      const params = new URLSearchParams(window.location.search);
+      const username = params.get("user");
+
+      console.log("Username:", username);
+
+      const title = document.getElementById("username");
+      const gallery = document.getElementById("publicGallery");
+
+      if (!username) {
+        title.innerText = "No user found";
+        return;
+      }
+
+      title.innerText = username + "'s Gallery";
+
+      const userData = localStorage.getItem(username);
+      console.log("User data:", userData);
+
+      if (!userData) {
+        gallery.innerText = "User not found in localStorage";
+        return;
+      }
+
+      const user = JSON.parse(userData);
+
+      if (!user.images || user.images.length === 0) {
+        gallery.innerText = "No images uploaded";
+        return;
+      }
+
+      user.images.forEach(img => {
+        const image = document.createElement("img");
+        image.src = img;
+        image.style.width = "200px";
+        image.style.margin = "10px";
+        gallery.appendChild(image);
+      });
+
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  padding: 30px;
+  color: #222;
+}
+
+/* 🔹 Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+}
+
+header h2 {
+  font-size: 22px;
+}
+
+/* 🔹 Links */
+a {
+  color: #0066cc;
+  text-decoration: none;
+  margin-left: 12px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 🔹 Inputs & Buttons */
+input[type="file"] {
+  margin-top: 10px;
+}
+
+button {
+  padding: 8px 14px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+/* 🔹 Gallery container */
+.gallery,
+#myGallery,
+#publicGallery {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+/* 🔹 Image style */
+.gallery img,
+#myGallery img,
+#publicGallery img {
+  width: 220px;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  padding: 4px;
+  background: #fafafa;
+}
+
+/* 🔹 Empty message */
+p {
+  margin-top: 15px;
+  color: #777;
+}
